@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .div-base {
+            background-color: #e0e0ee;
+            width: 400px;
+            padding: 10px;
+            text-align: center;
+            font-size: 14pt;
+            margin: 5px;
+        }
+        .div-red{
+            border: 3px solid rgba(168, 12, 12, 0.409);
+            padding: 20px;
+            width: 420px;
+        }
+        .div-black {
+            border: 2px solid rgb(0, 0, 0);
+           padding: 10px;
+           width: 400px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+<script>
+    let baseDiv1 = document.createElement('div')
+    baseDiv1.classList.add("div-base")
+    textNode1 = document.createTextNode("before")
+    baseDiv1.append(textNode1)
+    document.body.append(baseDiv1)
+ 
+    let redDiv = document.createElement('div')
+   redDiv.classList.add("div-red")
+    document.body.append(redDiv)
+
+    let baseDiv2 = document.createElement('div')
+    baseDiv2.classList.add("div-base")
+    textNode1 = document.createTextNode("prepend")
+    baseDiv2.append(textNode1)
+    redDiv.append(baseDiv2)
+
+    let blackDiv= document.createElement('div')
+    blackDiv.classList.add("div-black")
+    redDiv.append(blackDiv)
+
+let h1 = document.createElement('h1')
+h1.append(document.createTextNode('Lorem ipsum'))
+blackDiv.append(h1)
+
+
+let p = document.createElement('p')
+p.append(document.createTextNode('Lorem ipsum - это текст - "рыба", часто используемый в печати и вэб-дизайне. Lorem ipsum является стандартной "рыбой" для текстов на латинице сначала XVII века.'))
+blackDiv.append(p)
+
+let h3 = document.createElement('h3')
+h3.append(document.createTextNode('Содержание'))
+blackDiv.append(h3)
+let ul = document.createElement('ul')
+for (text of ['Происхождение' , 'Использование', 'Примечание' , 'Ссылки']) {
+    let li = document.createElement('li')
+    li.append(document.createTextNode(text))
+    ul.append(li)
+}
+blackDiv.append(ul)
+
+
+    let baseDiv3 = document.createElement('div')
+    baseDiv3.classList.add("div-base")
+    textNode1 = document.createTextNode("append")
+    baseDiv3.append(textNode1)
+    redDiv.append(baseDiv3)
+
+
+
+    
+let baseDiv4 = document.createElement('div')
+    baseDiv4.classList.add("div-base")
+    textNode1 = document.createTextNode("after")
+    baseDiv4.append(textNode1)
+    document.body.append(baseDiv4)
+
+</script>
+
+
+</body>
+</html>
